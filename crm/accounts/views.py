@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, response
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -16,5 +16,5 @@ def treinamento(request):
     return render(request, 'accounts/treinamento.html')
 
 
-def costumer(request):
-    return render(request, 'accounts/costumer.html')
+def custumer(request):
+    return render(request, 'accounts/custumer.html')
