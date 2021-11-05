@@ -6,15 +6,15 @@ body{
 }
 
 
-#total-orders{
-    background-color: #4cb4c7;
+#avisos{
+    background-color: #25c4e1;
 }
 
 
-#orders-delivered{
-    background-color: #7abecc;
+#atualizacoes{
+    background-color: #39c764;
 }
 
-#orders-pending{
-    background-color: #7CD1C0;
+#observacoes{
+    background-color: #14312c;
 }

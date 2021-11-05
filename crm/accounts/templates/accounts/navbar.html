@@ -7,20 +7,23 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">DASHBOARD</a>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">DASHBOARD</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">ROTINAS</a>
+        <a class="nav-link" href="{% url 'tempo_real' %}">TEMPO REAL</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">TREINAMENTO</a>
+        <a class="nav-link" href="{% url 'rotinas' %}">ROTINAS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">COSTUMER</a>
+        <a class="nav-link" href="{% url 'treinamento' %}">TREINAMENTO</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" target="_blank" href="https://youtu.be/UJP2ATnDwCA?list=RDUJP2ATnDwCA">AMANDA</a>
+        <a class="nav-link" href="{% url 'usuarios' %}">USUÁRIOS</a>
+      </li>
+      <li class="nav-item"> 
+        <a class="nav-link" target="_blank" href="https://youtu.be/UJP2ATnDwCA?list=RDUJP2ATnDwCA">GERENCIAMENTO</a>
       </li>
     </ul>
   </div>

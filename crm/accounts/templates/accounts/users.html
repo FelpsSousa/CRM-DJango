@@ -1,0 +1,43 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+<div class="row">
+	<div class="col-md-7">
+		<hr>
+		<h5>TABELA DE USUÁRIOS</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="">Criar Usuário</a>
+			<table class="table table-sm table-striped">
+				<tr>
+					<th></th>
+					<th>Nome</th>
+					<th>Telefone</th>
+				</tr>
+
+				{% for usuario in usuarios %}
+					<tr>
+						<td><a class="btn btn-sm btn-info" href="{% url 'usuario' usuario.id %}">View</a></td>
+						<td>{{usuario.nome}}</td>
+						<td>{{usuario.telefone}}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<hr>
+		<h5>TOTAL USUÁRIOS</h5>
+		<hr>
+		<div class="card card-body">
+			<h4 style="text-align: center;padding: 10px">{{total_usuarios}}</h4>
+		</div>
+	</div>
+</div>
+
+<hr>
+<h6>{{total_usuarios}}</h6>
+<hr>
+
+{% endblock %}

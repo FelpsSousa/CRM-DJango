@@ -2,6 +2,88 @@
 
 {% block content %}
 
-    <p> DASHBOARD <p/>
+<hr>
+<br>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="avisos">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Notas e Obs.</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h5 class="card-title">
+					Lugar de exemplo para os avisos.
+					</h5>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="atualizacoes">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Notas e Obs.</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h5 class="card-title">
+					Lugar destinado para as atualizações de normas.
+					</h5>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="observacoes">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Notas e Obs.</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h5 class="card-title">
+					Toda e qualquer observação extra que possa vir antes, na entrada, ou durante o mês referente.
+					</h5>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="card card-body">
+			<h5> DASHBOARD </h5>
+		</div>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Título</th>
+					<th>Conteudo</th>
+					<th>Data de Criação</th>
+                    <th>Data de Validade</th>
+                    <th>Tags</th>
+					<th>Atualizar</th>
+					<th>Remover</th>
+				</tr>
+
+				{% for aviso in avisos %}
+					<tr>
+						<td>{{aviso.titulo}}</td>
+						<td>{{aviso.conteudo}}</td>
+						<td>{{aviso.data_criacao}}</td>
+                        <td>{{aviso.data_validade}}</td>
+						<td>{{aviso.tags.nome}}</td>
+						<td><a href="">Atualizar</a></td>
+						<td><a href="">Remover</a></td>
+					</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+<hr>
 
 {% endblock %}

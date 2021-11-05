@@ -1,0 +1,202 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+<br>
+<hr>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="card card-body">
+			<h5> USUÁRIOS </h5>
+		</div>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Nome</th>
+					<th>Telefone</th>
+					<th>Email</th>
+					<th>Data de Cadastro</th>
+					<th>Atualizar</th>
+					<th>Remover</th>
+				</tr>
+
+				{% for usuario in usuarios %}
+					<tr>
+						<td>{{usuario.nome}}</td>
+						<td>{{usuario.email}}</td>
+						<td>{{usuario.telefone}}</td>
+						<td>{{usuario.data_criacao}}</td>
+						<td><a href="">Atualizar</a></td>
+						<td><a href="">Remover</a></td>
+					</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+<br>
+<hr>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>usuario:</h5>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="">Update usuario</a>
+			<a class="btn btn-outline-danger  btn-sm btn-block" href="">Delete usuario</a>
+
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p>Email: </p>
+			<p>Phone: </p>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Total Orders</h5>
+			<hr>
+			<h1 style="text-align: center;padding: 10px"></h1>
+		</div>
+	</div>
+</div>
+
+
+<br>
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+			<form method="get">
+
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+		</div>
+	</div>
+	
+</div>
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Product</th>
+					<th>Category</th>
+					<th>Date Orderd</th>
+					<th>Status</th>
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+
+			</table>
+		</div>
+	</div>
+</div>
+
+<hr>
+<h6>{{total_usuarios}}</h6>
+<hr>
+<h6>{{qtd_felipe}}</h6>
+<hr>
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>usuario:</h5>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="">Update usuario</a>
+			<a class="btn btn-outline-danger  btn-sm btn-block" href="">Delete usuario</a>
+
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Informações do Usuário</h5>
+			<hr>
+			<p>Nome: {{usuario.nome}}</p>
+			<p>Email: {{usuario.email}}</p>
+			<p>Telefone: {{usuario.telefone}}</p>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Total de Avisos</h5>
+			<hr>
+			<h1 style="text-align: center;padding: 10px">{{avisos_cont}}</h1>
+		</div>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-12">
+		<div class="card card-body">
+			<h5> DASHBOARD </h5>
+		</div>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Título</th>
+					<th>Conteudo</th>
+					<th>Data de Criação</th>
+					<th>Data de Validade</th>
+                    <th>Tags</th>
+					<th>Atualizar</th>
+					<th>Remover</th>
+				</tr>
+
+				{% for aviso in avisos %}
+					<tr>
+						<td>{{aviso.titulo}}</td>
+						<td>{{aviso.conteudo}}</td>
+						<td>{{aviso.data_criacao}}</td>
+                        <td>{{aviso.data_validade}}</td>
+						<td>{{aviso.tag.nome}}</td>
+						<td><a class="btn btn-sm btn-info" href="">Atualizar</a></td>
+						<td><a class="btn btn-sm btn-danger" href="">Remover</a></td>
+					</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-5">
+		<div class="card card-body">
+			<hr>
+			<h5>LITTLE TABELA DE USUÁRIOS</h5>
+			<hr>
+			<a class="btn btn-primary  btn-sm btn-block" href="">Criar Usuário</a>
+			<table class="table table-sm table-striped">
+				<tr>
+					<th></th>
+					<th>Nome</th>
+					<th>Telefone</th>
+				</tr>
+
+				{% for usuario in usuarios %}
+					<tr>
+						<td><a class="btn btn-sm btn-info" href="{% url 'usuario' usuario.id %}">View</a></td>
+						<td>{{usuario.nome}}</td>
+						<td>{{usuario.telefone}}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
